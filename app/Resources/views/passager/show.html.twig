@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Passager</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ passager.id }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td><img src="{{ asset('uploads/images/' ~passager.image ) }}" width="100"height="100"></td>
+            </tr>
+            <tr>
+                <th>Nomprenom</th>
+                <td>{{ passager.nomPrenom }}</td>
+            </tr>
+            <tr>
+                <th>Bunsiness</th>
+                <td>{% if passager.bunsiness %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Nbebagage</th>
+                <td>{{ passager.nbeBagage }}</td>
+            </tr>
+            <tr>
+                <th>Totalfrais</th>
+                <td>{{ passager.totalFrais }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('passager_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

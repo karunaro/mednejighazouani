@@ -1,0 +1,12 @@
+passager_index:
+    path:     /
+    defaults: { _controller: "GestionVolBundle:passager:index" }
+    methods:  GET
+
+passager_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionVolBundle:passager:show" }
+    methods:  GET
+
+
+

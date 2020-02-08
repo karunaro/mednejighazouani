@@ -1,0 +1,16 @@
+gestion_vol_passager:
+    resource: "@GestionVolBundle/Resources/config/routing/passager.yml"
+    prefix:   /passager
+
+gestion_vol_homepage:
+    path:     /home
+    defaults: { _controller: GestionVolBundle:Default:index }
+ajoutevol:
+    path:     /ajoutevol
+    defaults: { _controller: GestionVolBundle:Default:ajoutevol }
+affichevol:
+    path:     /affiche
+    defaults: { _controller: GestionVolBundle:Default:affiche }
+ajoutebagege:
+    path:     /ajoutebagage/{id}
+    defaults: { _controller: GestionVolBundle:Default:ajoutebagage }

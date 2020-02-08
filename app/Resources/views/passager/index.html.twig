@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Passagers list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Image</th>
+                <th>Nomprenom</th>
+                <th>Bunsiness</th>
+                <th>Nbebagage</th>
+                <th>Totalfrais</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for passager in passagers %}
+            <tr>
+                <td><a href="{{ path('passager_show', { 'id': passager.id }) }}">{{ passager.id }}</a></td>
+                <td><img src="{{ asset('uploads/images/' ~passager.image ) }}" width="100"height="100"></td>
+                <td>{{ passager.nomPrenom }}</td>
+                <td>{% if passager.bunsiness %}Yes{% else %}No{% endif %}</td>
+                <td>{{ passager.nbeBagage }}</td>
+                <td>{{ passager.totalFrais }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('passager_show', { 'id': passager.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}
